@@ -143,7 +143,7 @@ Window {
         width: 30
         color: "transparent"
         Image {
-            source: ".img/home.png"
+            source: ".img"
             width: 100
             height: 100
         }
