@@ -3,7 +3,7 @@
         <file>main.qml</file>
         <file>img/home.png</file>
         <file>img/check.png</file>
-        <file>img/return.png</file>
+        <file>img/arrow.png</file>
         <file>img/printing.png</file>
         <file>img/setting.png</file>
     </qresource>

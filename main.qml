@@ -28,7 +28,7 @@ Window {
             height:-10
 
             Button{
-                x:window1.x -250
+                x:window1.x -150
                 y:3
                 background: Rectangle
                 {
@@ -36,7 +36,7 @@ Window {
 
                 Image {
                     id: img
-                    source: "qrc:/img/return.png"
+                    source: "qrc:/img/arrow.png"
                     width: 10
                     height: 10
         }
@@ -44,7 +44,7 @@ Window {
     }
 }
         ColumnLayout{
-            spacing:50
+            spacing:100
             anchors.left: blackreg.left
             anchors.leftMargin:80
             anchors.top: blackreg.top
@@ -52,7 +52,9 @@ Window {
         Button{
             id: axes
             text: qsTr("Axes autocalibration")
+
             contentItem: Text {
+                id:axestext
                 text: axes.text
                 font: axes.font
                 color: "white"
@@ -65,21 +67,25 @@ Window {
             }
 
             background: Rectangle {
-                id: line
                 color: "transparent"
+                anchors.left: axestext.left
+                anchors.leftMargin: -35
+                anchors.top: axestext.top
+                anchors.topMargin: 60
 
                 Rectangle{
                     width: window1.width
                     height: 1
                     color: "gray"
-                    anchors.bottom: parent.bottom
         }
     }
 }
 
 
         Button{
+            x:axestext
             contentItem: Text {
+                id:manualtext
                 text: "Manual offset adjustment"
                 font: axes.font
                 opacity: enabled ? 1.0 : 0.3
@@ -92,6 +98,10 @@ Window {
 
             background: Rectangle {
             color: "transparent"
+            anchors.left: manualtext.left
+            anchors.leftMargin: -35
+            anchors.top: manualtext.top
+            anchors.topMargin: 60
 
             Rectangle{
                 width: window1.width
@@ -116,6 +126,10 @@ Window {
 
             background: Rectangle {
             color: "transparent"
+            anchors.left: axestext.left
+            anchors.leftMargin: -35
+            anchors.top: axestext.top
+            anchors.topMargin: 60
 
                 Rectangle{
                     width: window1.width
