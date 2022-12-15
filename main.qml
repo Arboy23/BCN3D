@@ -25,10 +25,10 @@ Window {
             color: "#B3B3B3"
             text:"Calibration"
             scale: 2
-            height:-10
+            height:-50
 
             Button{
-                x:window1.x -150
+                x: blackreg.x-60
                 y:3
                 background: Rectangle
                 {
@@ -37,9 +37,9 @@ Window {
                 Image {
                     id: img
                     source: "qrc:/img/arrow.png"
-                    width: 10
-                    height: 10
-        }
+                    width: 15
+                    height: 15
+            }
         }
     }
 }
@@ -48,8 +48,9 @@ Window {
             anchors.left: blackreg.left
             anchors.leftMargin:80
             anchors.top: blackreg.top
-            anchors.topMargin: 100
+            anchors.topMargin: 130
         Button{
+            Button.action: AxesAutocalibration
             id: axes
             text: qsTr("Axes autocalibration")
 
@@ -67,6 +68,7 @@ Window {
             }
 
             background: Rectangle {
+                id:posrec
                 color: "transparent"
                 anchors.left: axestext.left
                 anchors.leftMargin: -35
@@ -83,11 +85,13 @@ Window {
 
 
         Button{
-            x:axestext
+            id:manual
+            anchors.left: axes.left
+            anchors.leftMargin:axestext.x
+
             contentItem: Text {
                 id:manualtext
                 text: "Manual offset adjustment"
-                font: axes.font
                 opacity: enabled ? 1.0 : 0.3
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
@@ -98,7 +102,7 @@ Window {
 
             background: Rectangle {
             color: "transparent"
-            anchors.left: manualtext.left
+            anchors.left: manual.left
             anchors.leftMargin: -35
             anchors.top: manualtext.top
             anchors.topMargin: 60
@@ -113,22 +117,26 @@ Window {
 }
 
         Button{
+            id:mesh
+            anchors.left: axes.left
+            anchors.leftMargin:axestext.x
             contentItem: Text {
+                id:meshtext
                 text: "Mesh mapping"
-                font: axes.font
                 opacity: enabled ? 1.0 : 0.3
                 color: "white"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
                 scale:1.5
+                x:-manual.x
             }
 
             background: Rectangle {
             color: "transparent"
-            anchors.left: axestext.left
+            anchors.left: mesh.left
             anchors.leftMargin: -35
-            anchors.top: axestext.top
+            anchors.top: meshtext.top
             anchors.topMargin: 60
 
                 Rectangle{
@@ -161,7 +169,8 @@ Window {
         z:1
         y:window1.height -70
 
-
+        Button{
+            background: Rectangle{color: "transparent"}
             Rectangle{
                 height: 30
                 width: 30
@@ -173,8 +182,10 @@ Window {
                     anchors.centerIn: parent
              }
          }
+    }
 
-
+        Button{
+            background: Rectangle{color: "transparent"}
             Rectangle{
                 height: 30
                 width: 30
@@ -186,19 +197,24 @@ Window {
                     anchors.centerIn: parent
              }
          }
+    }
 
+           Button{
+                background: Rectangle{color: "transparent"}
             Rectangle{
                 height: 30
                 width: 30
                 color: "transparent"
                 Image {
-                    source: "qrc:/img/printing.png"
+                    source: "qrc:/img/printer.png"
                     width: 30
                     height: 30
                     anchors.centerIn: parent
              }
          }
-
+    }
+                   Button{
+                       background: Rectangle{color: "transparent"}
             Rectangle{
                 height: 30
                 width: 30
@@ -208,7 +224,8 @@ Window {
                     width: 30
                     height: 30
                     anchors.centerIn: parent
-             }
-         }
+                }
+            }
+        }
     }
 }
