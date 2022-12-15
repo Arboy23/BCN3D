@@ -50,7 +50,7 @@ Window {
             anchors.top: blackreg.top
             anchors.topMargin: 130
         Button{
-            Button.action: AxesAutocalibration
+            //Button.action: AxesAutocalibration.set
             id: axes
             text: qsTr("Axes autocalibration")
 

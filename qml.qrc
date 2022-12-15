@@ -7,5 +7,7 @@
         <file>img/printer.png</file>
         <file>img/setting.png</file>
         <file>AxesAutocalibration.qml</file>
+        <file>MeshMapping.qml</file>
+        <file>ManualOffsetAdjustment.qml</file>
     </qresource>
 </RCC>
