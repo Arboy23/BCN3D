@@ -50,7 +50,11 @@ Window {
             anchors.top: blackreg.top
             anchors.topMargin: 130
         Button{
+<<<<<<< HEAD
             onClicked: Axes_Autocalibration.ac
+=======
+            //Button.action: AxesAutocalibration.set
+>>>>>>> 534d9b80997f11a61655e3e75511454842689148
             id: axes
             text: qsTr("Axes autocalibration")
 
@@ -206,7 +210,7 @@ Window {
                 width: 30
                 color: "transparent"
                 Image {
-                    source: "qrc:/img/printing.png"
+                    source: "qrc:/img/printer.png"
                     width: 30
                     height: 30
                     anchors.centerIn: parent
