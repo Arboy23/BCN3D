@@ -6,14 +6,9 @@
         <file>img/arrow.png</file>
         <file>img/printer.png</file>
         <file>img/setting.png</file>
-<<<<<<< HEAD
         <file>Axes_Autocalibration.qml</file>
         <file>Manual_Offset_Adjustment.qml</file>
         <file>Mesh_Mapping.qml</file>
-=======
-        <file>AxesAutocalibration.qml</file>
-        <file>MeshMapping.qml</file>
-        <file>ManualOffsetAdjustment.qml</file>
->>>>>>> 534d9b80997f11a61655e3e75511454842689148
+        <file>Main_window.qml</file>
     </qresource>
 </RCC>
