@@ -6,6 +6,10 @@
         <file>img/arrow.png</file>
         <file>img/printer.png</file>
         <file>img/setting.png</file>
+        <file>img/Axes-img/object.png</file>
+        <file>img/Mesh-img/info.png</file>
+        <file>img/Mesh-img/map.png</file>
+        <file>img/Manual-img/warning.png</file>
         <file>Axes_Autocalibration.qml</file>
         <file>Manual_Offset_Adjustment.qml</file>
         <file>Mesh_Mapping.qml</file>

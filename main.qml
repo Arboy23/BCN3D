@@ -20,15 +20,29 @@ Window {
 
    Component{
    id:mainView
+
        Main_window{
        }
-
    }
 
    Component{
    id:axesView
+
        Axes_Autocalibration{
        }
+   }
 
+   Component{
+   id:manualView
+
+       Manual_Offset_Adjustment{
+       }
+   }
+
+   Component{
+   id:meshView
+
+       Mesh_Mapping{
+       }
    }
 }

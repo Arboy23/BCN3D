@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.14
 import QtQuick.Controls.Styles 1.4
 
-Window {
+Page {
     id: window1
     width: 480
     height: 800
@@ -23,7 +23,7 @@ Window {
             id: cali
             Layout.alignment: Qt.AlignCenter
             x: ((blackreg.width / 2)-(width/2))
-            color: "#B3B3B3"
+            color: "#4C5156"
             text:"Calibration"
             scale: 2
             height:-50
@@ -50,105 +50,108 @@ Window {
             anchors.leftMargin:80
             anchors.top: blackreg.top
             anchors.topMargin: 130
-        Button{
-            onClicked: stack.push(axesView)
-            id: axes
-            text: qsTr("Axes autocalibration")
+            Button{
+                onClicked: stack.push(axesView)
+                id: axes
+                text: qsTr("Axes autocalibration")
 
-            contentItem: Text {
-                id:axestext
-                text: axes.text
-                font: axes.font
-                color: "white"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-                scale:1.5
+                contentItem: Text {
+                    id:axestext
+                    text: axes.text
+                    font: axes.font
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                    scale:1.5
 
 
+                }
+
+                background: Rectangle {
+                    id:posrec
+                    color: "transparent"
+                    anchors.left: axestext.left
+                    anchors.leftMargin: -35
+                    anchors.top: axestext.top
+                    anchors.topMargin: 60
+
+                    Rectangle{
+                        width: window1.width
+                        height: 1
+                        color: "gray"
+                    }
+                }
             }
 
-            background: Rectangle {
-                id:posrec
+
+            Button{
+                id:manual
+                anchors.left: axes.left
+                anchors.leftMargin:axestext.x
+                onClicked: stack.push(manualView)
+
+                contentItem: Text {
+                    id:manualtext
+                    text: "Manual offset adjustment"
+                    opacity: enabled ? 1.0 : 0.3
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                    scale:1.5
+                }
+
+                background: Rectangle {
                 color: "transparent"
-                anchors.left: axestext.left
+                anchors.left: manual.left
                 anchors.leftMargin: -35
-                anchors.top: axestext.top
+                anchors.top: manualtext.top
                 anchors.topMargin: 60
 
-                Rectangle{
-                    width: window1.width
-                    height: 1
-                    color: "gray"
-        }
-    }
-}
-
-
-        Button{
-            id:manual
-            anchors.left: axes.left
-            anchors.leftMargin:axestext.x
-            contentItem: Text {
-                id:manualtext
-                text: "Manual offset adjustment"
-                opacity: enabled ? 1.0 : 0.3
-                color: "white"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-                scale:1.5
+                    Rectangle{
+                        width: window1.width
+                        height: 1
+                        color: "gray"
+                        anchors.bottom: parent.bottom
+                    }
+                }
             }
+            Button{
+                id:mesh
+                anchors.left: axes.left
+                anchors.leftMargin:axestext.x
+                onClicked: stack.push(meshView)
 
-            background: Rectangle {
-            color: "transparent"
-            anchors.left: manual.left
-            anchors.leftMargin: -35
-            anchors.top: manualtext.top
-            anchors.topMargin: 60
+                contentItem: Text {
+                    id:meshtext
+                    text: "Mesh mapping"
+                    opacity: enabled ? 1.0 : 0.3
+                    color: "white"
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+                    scale:1.5
+                    x:-manual.x
+                }
 
-            Rectangle{
-                width: window1.width
-                height: 1
-                color: "gray"
-                anchors.bottom: parent.bottom
-        }
-    }
-}
+                background: Rectangle {
+                color: "transparent"
+                anchors.left: mesh.left
+                anchors.leftMargin: -35
+                anchors.top: meshtext.top
+                anchors.topMargin: 60
 
-        Button{
-            id:mesh
-            anchors.left: axes.left
-            anchors.leftMargin:axestext.x
-            contentItem: Text {
-                id:meshtext
-                text: "Mesh mapping"
-                opacity: enabled ? 1.0 : 0.3
-                color: "white"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-                scale:1.5
-                x:-manual.x
-            }
-
-            background: Rectangle {
-            color: "transparent"
-            anchors.left: mesh.left
-            anchors.leftMargin: -35
-            anchors.top: meshtext.top
-            anchors.topMargin: 60
-
-                Rectangle{
-                    width: window1.width
-                    height: 1
-                    color: "gray"
-                    anchors.bottom: parent.bottom
+                    Rectangle{
+                        width: window1.width
+                        height: 1
+                        color: "gray"
+                        anchors.bottom: parent.bottom
+                    }
                 }
             }
         }
     }
-}
 
 
     Rectangle{
@@ -158,7 +161,7 @@ Window {
     width: window1.width
     z:1
     y:window1.height -70
-}
+    }
 
     RowLayout{
         anchors.left: blackreg.left
@@ -180,12 +183,14 @@ Window {
                     width: 30
                     height: 30
                     anchors.centerIn: parent
-             }
-         }
-    }
+                }
+            }
+        }
 
         Button{
+
             background: Rectangle{color: "transparent"}
+
             Rectangle{
                 height: 30
                 width: 30
@@ -195,12 +200,12 @@ Window {
                     width: 30
                     height: 30
                     anchors.centerIn: parent
-             }
-         }
-    }
+                }
+            }
+        }
 
-           Button{
-                background: Rectangle{color: "transparent"}
+       Button{
+            background: Rectangle{color: "transparent"}
             Rectangle{
                 height: 30
                 width: 30
@@ -210,15 +215,17 @@ Window {
                     width: 30
                     height: 30
                     anchors.centerIn: parent
-             }
-         }
-    }
-                   Button{
-                       background: Rectangle{color: "transparent"}
+                }
+            }
+        }
+        Button{
+            background: Rectangle{color: "transparent"}
+
             Rectangle{
                 height: 30
                 width: 30
                 color: "transparent"
+
                 Image {
                     source: "qrc:/img/setting.png"
                     width: 30
