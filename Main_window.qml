@@ -44,13 +44,19 @@ Page {
                 }
             }
         }
+
         ColumnLayout{
             spacing:100
             anchors.left: blackreg.left
             anchors.leftMargin:80
             anchors.top: blackreg.top
             anchors.topMargin: 130
-            Button{
+
+            CustomButton{
+            buttonText: "Axes autocalibration"
+            buttonids: "qrc:/Axes_Autocalibration.qml"
+            }
+            /*Button{
                 onClicked: stack.push(axesView)
                 id: axes
                 text: qsTr("Axes autocalibration")
@@ -82,10 +88,13 @@ Page {
                         color: "gray"
                     }
                 }
-            }
+            }*/
 
-
-            Button{
+        CustomButton{
+            buttonText: "Manual offset adjustment"
+            buttonids: "qrc:/Manual_Offset_Adjustment.qml"
+        }
+            /*Button{
                 id:manual
                 anchors.left: axes.left
                 anchors.leftMargin:axestext.x
@@ -116,39 +125,11 @@ Page {
                         anchors.bottom: parent.bottom
                     }
                 }
-            }
-            Button{
-                id:mesh
-                anchors.left: axes.left
-                anchors.leftMargin:axestext.x
-                onClicked: stack.push(meshView)
+            }*/
 
-                contentItem: Text {
-                    id:meshtext
-                    text: "Mesh mapping"
-                    opacity: enabled ? 1.0 : 0.3
-                    color: "white"
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    elide: Text.ElideRight
-                    scale:1.5
-                    x:-manual.x
-                }
-
-                background: Rectangle {
-                color: "transparent"
-                anchors.left: mesh.left
-                anchors.leftMargin: -35
-                anchors.top: meshtext.top
-                anchors.topMargin: 60
-
-                    Rectangle{
-                        width: window1.width
-                        height: 1
-                        color: "gray"
-                        anchors.bottom: parent.bottom
-                    }
-                }
+            CustomButton{
+                buttonText: "Mesh mapping"
+                buttonids: "qrc:/Mesh_Mapping.qml"
             }
         }
     }

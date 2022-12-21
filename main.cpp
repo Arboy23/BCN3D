@@ -1,5 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QDebug>
+#include <QQmlContext>
+#include <QObject>
+#include "myclass.h"
+
+
 
 int main(int argc, char *argv[])
 {
@@ -8,12 +14,11 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
+
+    engine.rootContext()->setContextProperty("obj",new MyClass);
+
     engine.load(url);
 
     return app.exec();

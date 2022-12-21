@@ -14,5 +14,6 @@
         <file>Manual_Offset_Adjustment.qml</file>
         <file>Mesh_Mapping.qml</file>
         <file>Main_window.qml</file>
+        <file>CustomButton.qml</file>
     </qresource>
 </RCC>
