@@ -2,7 +2,6 @@
 #include "callbacka.h"
 
 
-
 callBackB::callBackB()
 {
 
@@ -10,7 +9,8 @@ callBackB::callBackB()
 
 void callBackB::timer()
 {
-    callBackA a ;
+    //instance = new callBackA();
+    //instance->acall();
     //a.acall();
 
     //un timer tiene que llamar acall de la classe A

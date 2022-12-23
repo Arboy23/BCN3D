@@ -1,7 +1,8 @@
 #ifndef CALLBACKA_H
 #define CALLBACKA_H
+
 #include <QDebug>
-#include "callbackb.h"
+
 class callBackA
 {
 
@@ -10,7 +11,7 @@ public:
     void acall();
     void callB();
 
-    callBackB call;
+    //callBackB call;
 
 private:
     QString m_hortaliza;
