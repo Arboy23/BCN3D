@@ -27,6 +27,13 @@ Page {
             text:"Calibration"
             scale: 2
             height:-50
+            Text{
+            scale:0.5
+            color: "white"
+            anchors.left:cali.left
+            anchors.leftMargin: 100
+            text:obj.returnIP()
+            }
 
             Button{
                 x: blackreg.x-60
@@ -56,76 +63,12 @@ Page {
             buttonText: "Axes autocalibration"
             buttonids: "qrc:/Axes_Autocalibration.qml"
             }
-            /*Button{
-                onClicked: stack.push(axesView)
-                id: axes
-                text: qsTr("Axes autocalibration")
-
-                contentItem: Text {
-                    id:axestext
-                    text: axes.text
-                    font: axes.font
-                    color: "white"
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    elide: Text.ElideRight
-                    scale:1.5
 
 
-                }
-
-                background: Rectangle {
-                    id:posrec
-                    color: "transparent"
-                    anchors.left: axestext.left
-                    anchors.leftMargin: -35
-                    anchors.top: axestext.top
-                    anchors.topMargin: 60
-
-                    Rectangle{
-                        width: window1.width
-                        height: 1
-                        color: "gray"
-                    }
-                }
-            }*/
-
-        CustomButton{
-            buttonText: "Manual offset adjustment"
-            buttonids: "qrc:/Manual_Offset_Adjustment.qml"
-        }
-            /*Button{
-                id:manual
-                anchors.left: axes.left
-                anchors.leftMargin:axestext.x
-                onClicked: stack.push(manualView)
-
-                contentItem: Text {
-                    id:manualtext
-                    text: "Manual offset adjustment"
-                    opacity: enabled ? 1.0 : 0.3
-                    color: "white"
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    elide: Text.ElideRight
-                    scale:1.5
-                }
-
-                background: Rectangle {
-                color: "transparent"
-                anchors.left: manual.left
-                anchors.leftMargin: -35
-                anchors.top: manualtext.top
-                anchors.topMargin: 60
-
-                    Rectangle{
-                        width: window1.width
-                        height: 1
-                        color: "gray"
-                        anchors.bottom: parent.bottom
-                    }
-                }
-            }*/
+            CustomButton{
+                buttonText: "Manual offset adjustment"
+                buttonids: "qrc:/Manual_Offset_Adjustment.qml"
+            }
 
             CustomButton{
                 buttonText: "Mesh mapping"
@@ -199,6 +142,7 @@ Page {
                 }
             }
         }
+
         Button{
             background: Rectangle{color: "transparent"}
 
@@ -216,9 +160,4 @@ Page {
             }
         }
     }
-
-   /*StackView{
-      id: stack
-      initialItem: cali
-   }*/
 }

@@ -6,25 +6,22 @@ Button{
     property string buttonids: "id"
 
     onClicked:{
-            stack.push(buttonids)
+        stack.push(buttonids)
         console.log(obj.funcionDebug())
     }
 
     contentItem: Text {
         id:manualtext
         text: buttonText
-        opacity: enabled ? 1.0 : 0.3
         color: "white"
         horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        elide: Text.ElideRight
         scale:1.5
     }
 
     background: Rectangle {
     color: "transparent"
-    anchors.left: manual.left
-    anchors.leftMargin: -35
+    anchors.left: manualtext.left
+    anchors.leftMargin: -50
     anchors.top: manualtext.top
     anchors.topMargin: 60
 

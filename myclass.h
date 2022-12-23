@@ -1,6 +1,5 @@
 #ifndef MYCLASS_H
 #define MYCLASS_H
-
 #include <QObject>
 
 class MyClass : public QObject
@@ -13,7 +12,10 @@ signals:
 
 public slots:
     QString funcionDebug();
+    QString returnIP();
 
 };
+
+
 
 #endif // MYCLASS_H

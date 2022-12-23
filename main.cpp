@@ -4,6 +4,7 @@
 #include <QQmlContext>
 #include <QObject>
 #include "myclass.h"
+#include "callbacka.h"
 
 
 
@@ -21,5 +22,9 @@ int main(int argc, char *argv[])
 
     engine.load(url);
 
+    callBackA obj;
+
     return app.exec();
+
 }
+
