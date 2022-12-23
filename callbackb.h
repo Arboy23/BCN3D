@@ -1,8 +1,6 @@
 #ifndef CALLBACKB_H
 #define CALLBACKB_H
 
-
-
 class callBackB
 {
 public:

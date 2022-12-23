@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     engine.load(url);
 
-    callBackA obj;
+    callBackA obj ("rabano gordo");
 
     return app.exec();
 

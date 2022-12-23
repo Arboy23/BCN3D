@@ -6,11 +6,14 @@ class callBackA
 {
 
 public:
-    callBackA();
+    callBackA(QString verdura = "");
     void acall();
     void callB();
 
     callBackB call;
+
+private:
+    QString m_hortaliza;
 
 };
 
