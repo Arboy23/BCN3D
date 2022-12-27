@@ -7,7 +7,6 @@ class callBackA
 public:
     callBackA(QString verdura = "");
     void acall();
-    void callB();
 
     //callBackB* _callB;
 

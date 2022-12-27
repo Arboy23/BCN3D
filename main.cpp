@@ -5,6 +5,7 @@
 #include <QObject>
 #include "myclass.h"
 #include "callbacka.h"
+#include "counter.h"
 
 
 
@@ -24,6 +25,13 @@ int main(int argc, char *argv[])
 
     callBackA* obj = new callBackA("rabo");
 
+
+    Counter a,b;
+    QObject::connect(&a, &Counter::valueChanged,
+                     &b, &Counter::setValue);
+
+        a.setValue(12);
+        b.setValue(48);
 
     delete obj;
 

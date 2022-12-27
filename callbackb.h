@@ -8,6 +8,7 @@ public:
     callBackA* instance;
     callBackB(callBackA* a);
     void timer();
+
 };
 
 #endif // CALLBACKB_H

@@ -9,6 +9,7 @@ CONFIG += c++11
 SOURCES += \
     callbacka.cpp \
     callbackb.cpp \
+    counter.cpp \
     main.cpp \
     myclass.cpp
 
@@ -30,4 +31,5 @@ RESOURCES += qml.qrc
 HEADERS += \
     callbacka.h \
     callbackb.h \
+    counter.h \
     myclass.h
