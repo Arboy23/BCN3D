@@ -1,15 +1,15 @@
 #include "callbackb.h"
-//#include "callbacka.h"
+#include "callbacka.h"
 
 
-callBackB::callBackB()
+callBackB::callBackB(callBackA* a)
 {
+    instance = a;
 }
 
 void callBackB::timer()
 {
-    //instance = new callBackA;
-    //instance->acall();
+    instance->acall();
     //a.acall();
 
     //un timer tiene que llamar acall de la classe A

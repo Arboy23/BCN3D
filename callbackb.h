@@ -6,7 +6,7 @@ class callBackB
 {
 public:
     callBackA* instance;
-    callBackB();
+    callBackB(callBackA* a);
     void timer();
 };
 
