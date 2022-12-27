@@ -1,15 +1,14 @@
 #include "callbackb.h"
-#include "callbacka.h"
+//#include "callbacka.h"
 
 
 callBackB::callBackB()
 {
-
 }
 
 void callBackB::timer()
 {
-    //instance = new callBackA();
+    //instance = new callBackA;
     //instance->acall();
     //a.acall();
 

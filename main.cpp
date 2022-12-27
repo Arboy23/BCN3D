@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
 
     engine.load(url);
 
-    callBackA* obj = new callBackA();
-
+    callBackA* obj = new callBackA("rabo");
 
 
     delete obj;

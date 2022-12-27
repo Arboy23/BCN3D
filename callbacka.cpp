@@ -4,7 +4,9 @@
 
 callBackA::callBackA(QString verdura) : m_hortaliza(verdura)
 {
-    //call.timer();
+    callBackB* _callB;
+   _callB = new callBackB();
+    _callB->timer();
 
 }
 

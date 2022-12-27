@@ -31,5 +31,4 @@ QString MyClass::returnIP()
     hostent *host_entry = gethostbyname(hostname);
     in_addr *address = (in_addr*) host_entry->h_addr_list[0];
     return inet_ntoa(*address);
-
 }
