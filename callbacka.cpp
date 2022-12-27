@@ -1,15 +1,12 @@
 #include "callbacka.h"
 #include "callbackb.h"
-#include "counter.h"
 
-
+    callBackB* _callB;
 callBackA::callBackA(QString verdura) : m_hortaliza(verdura)
 {
-    callBackB* _callB;
+
    _callB = new callBackB(this);
     _callB->timer();
-
-    delete _callB;
 
     //Counter* a;
     //a = new Counter(this);
@@ -21,4 +18,21 @@ void callBackA::acall()
 {
     //qDebug("holaaaa\n" "sisi");
     qDebug() << "Funciona el CallBack" << m_hortaliza;
+}
+
+void callBackA::connectcall()
+{
+  _callB->bconOBJ();
+}
+
+
+void callBackA::aconOBJ()
+{
+    qDebug() << "estoy en el A";
+}
+
+
+callBackA::~callBackA()
+{
+delete _callB;
 }

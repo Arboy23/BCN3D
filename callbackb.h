@@ -8,6 +8,9 @@ public:
     callBackA* instance;
     callBackB(callBackA* a);
     void timer();
+    void bconOBJ();
+    void connectcallb();
+    callBackA* aP;
 
 };
 

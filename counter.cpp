@@ -3,19 +3,16 @@
 
 Counter::Counter()
 {
-   // _caA = a;
-}
-void Counter::setValue(int value)
-{
-    if (value != m_value) {
-        m_value = value;
-        qDebug() << "puntos: " << m_value;
-        emit valueChanged(value);
-    }
 }
 
-void Counter::callBackCounter()
+
+void Counter::callBackCounterA()
 {
-    qDebug() << "h" ;
+   a->connectcall();
    //_caA->acall();
+}
+
+void Counter::callBackCounterB()
+{
+   b->connectcallb();
 }

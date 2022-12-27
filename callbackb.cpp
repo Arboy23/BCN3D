@@ -14,3 +14,16 @@ void callBackB::timer()
 
     //un timer tiene que llamar acall de la classe A
 }
+
+
+void callBackB::bconOBJ()
+{
+    qDebug() << "estoy en el B";
+}
+
+void callBackB::connectcallb()
+{
+    //instance->aconOBJ();
+}
+
+

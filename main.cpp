@@ -27,11 +27,12 @@ int main(int argc, char *argv[])
 
 
     Counter a,b;
-    QObject::connect(&a, &Counter::valueChanged,
-                     &b, &Counter::setValue);
+    QObject::connect(&a, &Counter::callBackCounterA,
+                    &b, &Counter::callBackCounterB);
 
-        a.setValue(12);
-        b.setValue(48);
+    a.callBackCounterA();
+    b.callBackCounterB();
+
 
     delete obj;
 

@@ -2,6 +2,7 @@
 #define COUNTER_H
 #include <QObject>
 #include "callbacka.h"
+#include "callbackb.h"
 
 class Counter : public QObject
 {
@@ -9,17 +10,14 @@ class Counter : public QObject
 
 public:
     Counter();
-    int value() const { return m_value; }
+    Counter* cou;
 
-public slots:
-    void setValue(int value);
-    void callBackCounter();
+    callBackA* a;
+    callBackB* b;
 
-signals:
-    void valueChanged(int newValue);
+    void callBackCounterA();
+    void callBackCounterB();
 
-private:
-    int m_value;
 };
 
 #endif // COUNTER_H
