@@ -3,9 +3,13 @@
 #include <QDebug>
 #include <QQmlContext>
 #include <QObject>
+#include <QCoreApplication>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusInterface>
 #include "myclass.h"
-#include "callbacka.h"
 #include "counter.h"
+
 
 
 
@@ -33,8 +37,36 @@ int main(int argc, char *argv[])
     a.callBackCounterA();
     b.callBackCounterB();
 
-
     delete obj;
+
+    //conectar a la interfaz del servivio de ejemplo
+
+    QCoreApplication acore(argc, argv);
+   QDBusConnection connection = QDBusConnection::systemBus();
+    QDBusInterface interface("org.freedesktop.DBus","/org/freedesktop/DBus","org.freedesktop.DBus", connection);
+
+    //enviar un mensaje al metodo doSomething del servicio
+
+    QDBusMessage response = interface.call("doSomething", QVariant(42));
+
+    //verificar si se produce algun error
+
+    if(response.type() == QDBusMessage::ErrorMessage){
+        qCritical()<<"Error al llamar al metodo dosomething: " << response.errorMessage();
+    }
+    else
+    {
+        //procesa la respuesta
+        QVariant result =response.arguments().first();
+        qDebug()<< "Resultado de doSomething:" << result;
+    }
+
+
+
+
+
+
+
 
     return app.exec();
 
