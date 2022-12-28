@@ -8,7 +8,9 @@ Counter::Counter()
 
 void Counter::callBackCounterA()
 {
-   a->connectcall();
+
+    a->connectcall();
+
    //_caA->acall();
 }
 

@@ -5,12 +5,11 @@
 class callBackB
 {
 public:
-    callBackA* instance;
     callBackB(callBackA* a);
+    ~callBackB();
     void timer();
     void bconOBJ();
     void connectcallb();
-    callBackA* aP;
 
 };
 

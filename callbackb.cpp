@@ -1,7 +1,7 @@
 #include "callbackb.h"
 #include "callbacka.h"
 
-
+    callBackA* instance;
 callBackB::callBackB(callBackA* a)
 {
     instance = a;
@@ -10,6 +10,7 @@ callBackB::callBackB(callBackA* a)
 void callBackB::timer()
 {
     instance->acall();
+    //instance->aconOBJ();
     //a.acall();
 
     //un timer tiene que llamar acall de la classe A
@@ -23,7 +24,12 @@ void callBackB::bconOBJ()
 
 void callBackB::connectcallb()
 {
-    //instance->aconOBJ();
+    instance->aconOBJ();
+}
+
+callBackB::~callBackB()
+{
+    //delete instance;
 }
 
 

@@ -10,14 +10,14 @@ class Counter : public QObject
 
 public:
     Counter();
-    Counter* cou;
 
     callBackA* a;
     callBackB* b;
 
     void callBackCounterA();
     void callBackCounterB();
-
+signals:
+    void valueChanged(int newValue);
 };
 
 #endif // COUNTER_H

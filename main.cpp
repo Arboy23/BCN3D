@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 
     Counter a,b;
-    QObject::connect(&a, &Counter::callBackCounterA,
+    QObject::connect(&a, &Counter::valueChanged,
                     &b, &Counter::callBackCounterB);
 
     a.callBackCounterA();
