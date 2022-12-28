@@ -15,9 +15,12 @@ public:
     callBackB* b;
 
     void callBackCounterA();
+
+public slots:
     void callBackCounterB();
+
 signals:
-    void valueChanged(int newValue);
+    void valueChanged();
 };
 
 #endif // COUNTER_H

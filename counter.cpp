@@ -16,5 +16,6 @@ void Counter::callBackCounterA()
 
 void Counter::callBackCounterB()
 {
-   b->connectcallb();
+   //b->connectcallb();
+    qDebug() << "asdasd";
 }
