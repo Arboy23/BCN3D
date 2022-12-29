@@ -10,6 +10,7 @@
 #include <iostream>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
+#include <QDBusConnection>
 
 
 using namespace std;

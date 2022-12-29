@@ -9,6 +9,7 @@
 #include <QDBusInterface>
 #include "myclass.h"
 #include "counter.h"
+#include "dbuss_dfeet.h"
 
 
 
@@ -37,31 +38,33 @@ int main(int argc, char *argv[])
 
     emit a.valueChanged();
 
+    dBuss_DFeet conect;
+
     //a.callBackCounterA();
     //b.callBackCounterB();
 
     delete obj;
 
     //conectar a la interfaz del servivio de ejemplo
-    QCoreApplication acore(argc, argv);
-   QDBusConnection connection = QDBusConnection::systemBus();
-    QDBusInterface interface("org.freedesktop.NetworkManager","/org/freedesktop/NetworkManager","org.freedesktop.NetworkManager", connection);
+//    QCoreApplication acore(argc, argv);
+//   QDBusConnection connection = QDBusConnection::systemBus();
+//    QDBusInterface interface("org.freedesktop.NetworkManager","/org/freedesktop/NetworkManager","org.freedesktop.NetworkManager", connection);
 
-    //enviar un mensaje al metodo doSomething del servicio
+//    //enviar un mensaje al metodo doSomething del servicio
 
-    QDBusMessage response = interface.call("GetLogging");
+//    QDBusMessage response = interface.call("GetLogging");
 
-    //verificar si; se produce algun error
+//    //verificar si; se produce algun error
 
-    if(response.type() == QDBusMessage::ErrorMessage){
-        qCritical()<<"Error al llamar al metodo : " << response.errorMessage();
-    }
-    else
-    {
-        //procesa la respuesta
-        QVariant result =response.arguments();
-        qDebug()<< "Resultado :" << result;
-    }
+//    if(response.type() == QDBusMessage::ErrorMessage){
+//        qCritical()<<"Error al llamar al metodo : " << response.errorMessage();
+//    }
+//    else
+//    {
+//        //procesa la respuesta
+//        QVariant result =response.arguments();
+//        qDebug()<< "Resultado :" << result;
+//    }
 
     return app.exec();
 }

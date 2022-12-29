@@ -10,6 +10,7 @@ SOURCES += \
     callbacka.cpp \
     callbackb.cpp \
     counter.cpp \
+    dbuss_dfeet.cpp \
     main.cpp \
     myclass.cpp
 
@@ -32,4 +33,5 @@ HEADERS += \
     callbacka.h \
     callbackb.h \
     counter.h \
+    dbuss_dfeet.h \
     myclass.h
